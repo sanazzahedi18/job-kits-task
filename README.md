@@ -3,10 +3,9 @@
 
 📌 Overview
 
-This project is a responsive and dynamic application built with 
-Next.js (App Router) and various modern web development tools.
+This project is a responsive and dynamic job board application designed to deliver a seamless experience for job seekers and recruiters alike. Built with Next.js (App Router) and modern development tools, it combines powerful features for state management, form handling, and validation.
 
-Jobs Kit is a modern job board application built with Next.js, React, and MUI. It provides a smooth and dynamic experience for job seekers and recruiters, leveraging Redux Toolkit, React Hook Form, and Yup for state management and form validation.
+Key technologies include Redux Toolkit, MUI ensuring a smooth user experience and efficient form handling.
 
 ----------------------------------------------------------------------------------------------
 
