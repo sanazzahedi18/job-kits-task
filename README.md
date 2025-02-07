@@ -8,6 +8,12 @@ This project is a responsive and dynamic job board application designed to deliv
 Key technologies include Redux Toolkit, MUI ensuring a smooth user experience and efficient form handling.
 
 ----------------------------------------------------------------------------------------------
+🛠️ Deployment Link
+
+Access the live application here: https://job-kits-task.vercel.app/
+
+
+----------------------------------------------------------------------------------------------
 
 📦 Tech Stack
 
