@@ -1,30 +1,27 @@
 'use client'
+import AdbIcon from '@mui/icons-material/Adb'
+import MenuIcon from '@mui/icons-material/Menu'
 import {
   AppBar,
-  Toolbar,
-  Button,
   Box,
-  useScrollTrigger,
-  CssBaseline,
+  Button,
   Container,
+  CssBaseline,
+  Toolbar,
+  useScrollTrigger,
 } from '@mui/material'
+import IconButton from '@mui/material/IconButton'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Typography from '@mui/material/Typography'
 import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React from 'react'
 import { navbarItems } from '../core/constant/navbar'
 import { Navlink } from './Navlink'
-import React from 'react'
-import { usePathname } from 'next/navigation'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import Menu from '@mui/material/Menu'
-import MenuIcon from '@mui/icons-material/Menu'
-import Avatar from '@mui/material/Avatar'
-import Tooltip from '@mui/material/Tooltip'
-import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
-import Link from 'next/link'
-import { getValidAuthTokens } from '@/core/libraries/cookie'
 interface Props {
-      //ch
+  //ch
 
   /**
    * Injected by the documentation to work in an iframe.
@@ -37,7 +34,7 @@ interface Props {
 
 function ElevationScroll(props: Props) {
   const { children, window } = props
-      //ch
+  //ch
 
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
@@ -56,24 +53,15 @@ function ElevationScroll(props: Props) {
 }
 const Navbar = (props: Props) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  )
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget)
-  }
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget)
   }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
   }
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
-  }
   const pathname = usePathname()
   return (
     <React.Fragment>

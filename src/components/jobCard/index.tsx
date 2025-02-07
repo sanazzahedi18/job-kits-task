@@ -35,7 +35,6 @@ const JobCard: React.FC<JobCardProps> = ({
   company,
   postedDate,
   location,
-  isRemote,
   workType,
   department,
   subDepartment,

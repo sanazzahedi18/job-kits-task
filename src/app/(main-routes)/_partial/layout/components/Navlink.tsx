@@ -2,7 +2,6 @@ import { Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
 import { NavlinkProps } from '../core/types/interfaces'
-import { Content } from 'next/font/google'
 
 const Navlink: React.FC<NavlinkProps> = ({ href, isActive, title }) => {
   return (

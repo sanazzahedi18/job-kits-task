@@ -1,7 +1,6 @@
 import { Box, Grid2 } from '@mui/material'
 import React from 'react'
 import { JobSearch } from './_partial/page/components/JobHeader'
-import JobCard from '@/components/jobCard'
 import { cookies } from 'next/headers'
 import { JobsList } from './_partial/page/components/JobList'
 
@@ -20,13 +19,12 @@ export default async function page() {
         columns={6}
         spacing={3}
         sx={{
-         
           paddingTop: '30px',
           paddingRight: '25px',
           marginTop: '-24',
         }}
       >
-        <JobsList searchParams={''} />
+        <JobsList />
       </Grid2>
     </Box>
   )

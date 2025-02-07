@@ -1,5 +1,4 @@
 'use client'
-// src/JobSearch.tsx
 
 import React from 'react'
 import {
@@ -12,17 +11,14 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  IconButton,
   InputAdornment,
   DialogTitle,
   Dialog,
-  DialogContentText,
   DialogContent,
   DialogActions,
   Paper,
   Grid2,
 } from '@mui/material'
-import DeleteIcon from '@mui/icons-material/Delete'
 import { Category, Search } from '@mui/icons-material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
@@ -68,8 +64,7 @@ const JobSearch: React.FC = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            marginTop:"64px",
-            
+            marginTop: '64px',
           }}
         >
           <Typography variant="h1" color="white" gutterBottom>
@@ -182,27 +177,55 @@ const JobSearch: React.FC = () => {
                   }}
                 />
               </FormControl>
-              <FormControl fullWidth margin="dense"  sx={{ backgroundColor: 'success.dark', color: 'white' }}>
-                <InputLabel  sx={{ backgroundColor: 'success.dark', color: 'white' }}>Category</InputLabel>
+              <FormControl
+                fullWidth
+                margin="dense"
+                sx={{ backgroundColor: 'success.dark', color: 'white' }}
+              >
+                <InputLabel
+                  sx={{ backgroundColor: 'success.dark', color: 'white' }}
+                >
+                  Category
+                </InputLabel>
                 <Select
-                 sx={{ backgroundColor: 'success.dark', color: 'white' }}
+                  sx={{ backgroundColor: 'success.dark', color: 'white' }}
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                 >
-                  <MenuItem  sx={{ backgroundColor: 'success.dark', color: 'white' }} value={'Development & IT'}>
+                  <MenuItem
+                    sx={{ backgroundColor: 'success.dark', color: 'white' }}
+                    value={'Development & IT'}
+                  >
                     Development & IT
                   </MenuItem>
-                  <MenuItem  sx={{ backgroundColor: 'success.dark', color: 'white' }} value={'Sales & Marketing'}>
+                  <MenuItem
+                    sx={{ backgroundColor: 'success.dark', color: 'white' }}
+                    value={'Sales & Marketing'}
+                  >
                     Sales & Marketing
                   </MenuItem>
-                  <MenuItem  sx={{ backgroundColor: 'success.dark', color: 'white' }} value={'Design & Creative'}>
+                  <MenuItem
+                    sx={{ backgroundColor: 'success.dark', color: 'white' }}
+                    value={'Design & Creative'}
+                  >
                     Design & Creative
                   </MenuItem>
-                  <MenuItem  sx={{ backgroundColor: 'success.dark', color: 'white' }} value={'Healthcare & Medicine'}>
+                  <MenuItem
+                    sx={{ backgroundColor: 'success.dark', color: 'white' }}
+                    value={'Healthcare & Medicine'}
+                  >
                     Healthcare & Medicine
                   </MenuItem>
-                  <MenuItem  sx={{ backgroundColor: 'success.dark', color: 'white' }} value={'Human Resources'}>Human Resources</MenuItem>
-                  <MenuItem  sx={{ backgroundColor: 'success.dark', color: 'white' }} value={'Education & Training'}>
+                  <MenuItem
+                    sx={{ backgroundColor: 'success.dark', color: 'white' }}
+                    value={'Human Resources'}
+                  >
+                    Human Resources
+                  </MenuItem>
+                  <MenuItem
+                    sx={{ backgroundColor: 'success.dark', color: 'white' }}
+                    value={'Education & Training'}
+                  >
                     Education & Training
                   </MenuItem>
                 </Select>
@@ -211,8 +234,14 @@ const JobSearch: React.FC = () => {
             <DialogActions
               sx={{ backgroundColor: 'success.dark', color: 'white' }}
             >
-              <Button  sx={{ color: 'white' }}onClick={handleClose}>لغو</Button>
-              <Button sx={{ color: 'white' }} onClick={handleAddJob} color="primary">
+              <Button sx={{ color: 'white' }} onClick={handleClose}>
+                لغو
+              </Button>
+              <Button
+                sx={{ color: 'white' }}
+                onClick={handleAddJob}
+                color="primary"
+              >
                 ثبت
               </Button>
             </DialogActions>

@@ -1,22 +1,10 @@
 'use client'
-import {
-  Box,
-  TextField,
-  Button,
-  Typography,
-  Link,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material'
+import { Box, Typography, Link, useTheme, useMediaQuery } from '@mui/material'
 import Grid from '@mui/material/Grid2'
-import GoogleIcon from '@mui/icons-material/Google'
 import Image from 'next/image'
 import { LoginForm } from '@/components/loginForm'
 import { LoginRequest } from '@/core/definition/types/auth'
-import {
-  AuthEndpoints,
-  useLoginMutation,
-} from '@/core/libraries/redux/auth/authApi'
+import { useLoginMutation } from '@/core/libraries/redux/auth/authApi'
 import { useRouter } from 'next/navigation'
 
 export default function Login() {

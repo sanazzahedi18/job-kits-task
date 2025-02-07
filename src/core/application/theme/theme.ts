@@ -1,8 +1,6 @@
 'use client'
-import { BorderColor, NatOutlined } from '@mui/icons-material'
-import { createTheme, OutlinedInput, responsiveFontSizes } from '@mui/material'
+import { createTheme, responsiveFontSizes } from '@mui/material'
 import { common } from '@mui/material/colors'
-import { error } from 'console'
 
 const theme = createTheme({
   direction: 'rtl',

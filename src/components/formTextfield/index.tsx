@@ -1,4 +1,4 @@
-import { Control, Controller } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
 import TextField, { TextFieldProps } from '@mui/material/TextField'
 import React from 'react'
 
@@ -21,7 +21,7 @@ const FormTextField: React.FC<FormTextFieldProps> = ({
           error={!!error}
           onChange={onChange}
           {...rest}
-          sx={{direction:"rtl"}}
+          sx={{ direction: 'rtl' }}
         />
       )}
     />

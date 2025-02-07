@@ -1,29 +1,23 @@
 'use client'
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import JobCard from '@/components/jobCard'
+import { job } from '@/core/definition/types/jobs'
+import { getValidAuthTokens } from '@/core/libraries/cookie'
 import {
+  Box,
   Card,
   CardContent,
   CardHeader,
-  Typography,
   CircularProgress,
   Grid2,
   Skeleton,
-  Box,
 } from '@mui/material'
-import { job } from '@/core/definition/types/jobs'
-import { useSearchParams } from 'next/navigation'
-import JobCard from '@/components/jobCard'
-import { getValidAuthTokens } from '@/core/libraries/cookie'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
-interface JobsListProps {
-  searchParams: any
-}
-const JobsList: React.FC<JobsListProps> = ({ searchParams }) => {
+const JobsList: React.FC = () => {
   const [data, setData] = useState<job[]>([])
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(1)
   const observerRef = useRef<IntersectionObserver | null>(null)
-  const lastElementRef = useRef<HTMLDivElement | null>(null)
   const { token } = getValidAuthTokens()
 
   const fetchData = async (pageNum: number) => {
@@ -76,7 +70,7 @@ const JobsList: React.FC<JobsListProps> = ({ searchParams }) => {
 
   return (
     <div>
-      <Grid2 container columns={6} spacing={3} sx={{paddingX:'40px'}}>
+      <Grid2 container columns={6} spacing={3} sx={{ paddingX: '40px' }}>
         {loading &&
           Array.from(new Array(9)).map((_, index) => (
             <Grid2 key={index} size={{ xs: 6, md: 3, lg: 2 }}>
@@ -93,7 +87,7 @@ const JobsList: React.FC<JobsListProps> = ({ searchParams }) => {
                 </CardContent>
                 <CardHeader
                   avatar={
-                    <Box sx={{display:'flex', gap:'2px'}} >
+                    <Box sx={{ display: 'flex', gap: '2px' }}>
                       <Skeleton variant="circular" width={40} height={40} />
                       <Skeleton variant="circular" width={40} height={40} />
                     </Box>

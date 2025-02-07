@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { parseJwt } from './core/libraries/jwt'
 
-const protectedRoutes = ['/dashboard']
 const authRoutes = ['/login']
 const checkIsPathIncludes = (routes: string[], path: string) => {
   for (const route of routes) {
@@ -12,7 +11,6 @@ const checkIsPathIncludes = (routes: string[], path: string) => {
 }
 export default async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname
-  const isProtectedRoute = checkIsPathIncludes(protectedRoutes, path)
   const isAuthRoute = checkIsPathIncludes(authRoutes, path)
 
   const cookie = (await cookies()).get('auth_token')?.value
@@ -29,7 +27,7 @@ export default async function middleware(req: NextRequest) {
 
   return NextResponse.next()
 }
-      //ch
+//ch
 // Routes Middleware should not run on
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],

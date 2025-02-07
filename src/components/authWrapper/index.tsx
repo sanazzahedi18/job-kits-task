@@ -1,13 +1,8 @@
 'use client'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  authApi,
-  useGetAuthDataQuery,
-  useLoginMutation,
-} from '@/core/libraries/redux/auth/authApi'
-import { use, useEffect, useState } from 'react'
+import { useGetAuthDataQuery } from '@/core/libraries/redux/auth/authApi'
+import { useEffect } from 'react'
 import { getValidAuthTokens } from '@/core/libraries/cookie'
-import { RootState } from '@reduxjs/toolkit/query'
 import { logout } from '@/core/libraries/redux/auth/auth'
 import { useRouter } from 'next/navigation'
 
@@ -20,7 +15,7 @@ const AuthWrapper = ({ children }: Props) => {
   const { push } = useRouter()
   const { userEmail } = useSelector((state: any) => state.auth)
   const { token } = getValidAuthTokens()
-  const { error, isLoading } = useGetAuthDataQuery(
+  const { isLoading } = useGetAuthDataQuery(
     { token: token || '' },
     {
       //ch
@@ -29,10 +24,10 @@ const AuthWrapper = ({ children }: Props) => {
       skip: userEmail || !token,
     }
   )
-      //ch
+  //ch
 
   // this query will only execute if the token is valid and the user email is not already in the redux store
-      //ch
+  //ch
 
   // if the user doesnt have a valid token, redirect to login page
   useEffect(() => {
